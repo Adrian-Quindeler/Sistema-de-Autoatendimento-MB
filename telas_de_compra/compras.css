@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8d7da;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: black;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.categoria {
+    margin-bottom: 20px;
+}
+
+.categoria h3 {
+    color: black;
+    padding: 10px;
+    margin: 0 -20px 10px;
+}
+
+.produtos {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px 0;
+}
+
+.produto {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-right: 10px;
+    flex: 0 0 150px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
