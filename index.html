@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/MariaBonita.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/img_mariabonita_logo.png" type="image/x-icon">
     <title>Maria Bonita</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <img src="imagens/MariaBonita.png" alt="Logo Maria Bonita">
-            <p>O melhor do sabor das universidades!</p>
+<body class="flex-container">
+    <header>
+        <img src="imagens/img_mariabonita_logo.png" alt="Logo Maria Bonita">
+        <p>O melhor do sabor das universidades!</p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="content">
+                <form id="nameForm">
+                    <input type="text" id="name" name="name" placeholder="NOME" required>
+                </form>
+                <img src="PATH_TO_BURGER_IMAGE" alt="Imagem de Hambúrguer">
+            </div>
         </div>
-        <div class="content">
-            <form id="nameForm">
-                <input type="text" id="name" name="name" placeholder="NOME" required>
-            </form>
-            <img src="PATH_TO_BURGER_IMAGE" alt="Imagem de Hambúrguer">
-        </div>
-        <div class="footer">
-            <p>Toque para continuar</p>
-        </div>
-    </div>
+    </main>
+    <footer>
+        <a href="telas_de_compra/adicioanr_ao_carrinho.html">Toque para continuar</a>
+        <p>&copy; 2024 Maria Bonita</p>
+    </footer>
 </body>
 </html>

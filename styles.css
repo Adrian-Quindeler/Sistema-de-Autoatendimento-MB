@@ -3,43 +3,44 @@ body, html {
     width: 100%;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background-color: #f2f2f2;
     font-family: Arial, sans-serif;
 }
 
-.container {
-    width: 100%;
-    height: 100%;
+.flex-container {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #fff;
+    min-height: 100vh;
 }
 
-.header {
+header {
+    width: 100%;
+    height: 33.33vh;
     background-color: #f8d7da;
-    flex-basis: 33.33%;
-    padding: 20px;
-    text-align: center;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.header img {
-    width: 50px;
-    margin: 0 auto;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
+    align-items: center;
     text-align: center;
+    position: relative;
+}
+
+header img {
+    width: 50px;
+}
+
+main {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,9 +48,18 @@ body, html {
     position: relative;
 }
 
+.content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
 form {
-    position: absolute;
-    top: -20px;
+    position: fixed;
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1;
 }
 
@@ -60,16 +70,19 @@ form {
     border: 2px solid #000;
     border-radius: 15px;
     text-align: center;
+    background-color: #fff;
 }
 
 .content img {
     width: 100%;
     height: auto;
+    z-index: 0;
 }
 
-.footer {
-    padding: 10px;
-    background-color: #f1f1f1;
+footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
     text-align: center;
-    cursor: pointer;
+    border-top: 1px solid #ddd;
 }

@@ -6,13 +6,32 @@ body {
 
 header {
     background-color: #f8d7da;
-    text-align: center;
+    display: flex;
+    align-items: center;
     padding: 20px;
 }
 
-header h1 {
+header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+header .title {
+    flex: 1;
+    text-align: center;
+}
+
+header .title h1 {
     margin: 0;
     color: black;
+}
+
+header .title img {
+    height: 60px;
+    margin-left: 10px;
 }
 
 main {
@@ -52,4 +71,17 @@ footer {
     text-align: center;
     padding: 10px;
     color: black;
+}
+
+footer .botoes button {
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+footer .cancelar-pedido {
+    background-color: #ff4545;
+}
+
+footer .finalizar-pedido {
+    background-color: #60ff60;
 }
