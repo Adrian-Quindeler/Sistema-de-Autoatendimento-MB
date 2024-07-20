@@ -67,6 +67,21 @@ h2 {
     text-align: center;
 }
 
+.produto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.produto .nome-produto {
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.produto .preco-produto {
+    color: green;
+}
+
 footer {
     text-align: center;
     padding: 10px;
