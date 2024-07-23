@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagens/MariaBonita.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilo_compras.css">
+    <title>Maria Bonita</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="title">
+                <h1>Irresistível!</h1>
+                <img src="../imagens/img_mariabonita_logo.png" alt="Logo Maria Bonita">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Nossos Produtos</h2>
+            <div class="categoria">
+                <h3>Comidas</h3>
+                <div class="produtos">
+                    <div class="produto" onclick="incrementClick(this)">
+                        <img src="placeholder.jpg" alt="Hamburguer">
+                        <div class="click-counter" style="display:none;">0</div>
+                        <p class="nome-produto">Hamburguer</p>
+                        <p class="preco-produto">R$ 7,00</p>
+                    </div>
+                    <div class="produto" onclick="incrementClick(this)">
+                        <img src="placeholder.jpg" alt="Produto 2">
+                        <div class="click-counter" style="display:none;">0</div>
+                        <p class="nome-produto">Produto 2</p>
+                        <p class="preco-produto">R$ 8,00</p>
+                    </div>
+                    <!-- Continue adding more products as needed -->
+                </div>
+            </div>
+            <div class="categoria">
+                <h3>Bebidas</h3>
+                <div class="produtos">
+                    <div class="produto" onclick="incrementClick(this)">
+                        <img src="placeholder.jpg" alt="Bebida 1">
+                        <div class="click-counter" style="display:none;">0</div>
+                        <p class="nome-produto">Bebida 1</p>
+                        <p class="preco-produto">R$ 7,00</p>
+                    </div>
+                    <div class="produto" onclick="incrementClick(this)">
+                        <img src="placeholder.jpg" alt="Produto 2">
+                        <div class="click-counter" style="display:none;">0</div>
+                        <p class="nome-produto">Produto 2</p>
+                        <p class="preco-produto">R$ 8,00</p>
+                    </div>
+                    <!-- Continue adding more products as needed -->
+                </div>
+            </div>
+            <div class="categoria">
+                <h3>Complementos</h3>
+                <div class="produtos">
+                    <div class="produto" onclick="incrementClick(this)">
+                        <img src="placeholder.jpg" alt="Complemento 1">
+                        <div class="click-counter" style="display:none;">0</div>
+                        <p class="nome-produto">Complemento 1</p>
+                        <p class="preco-produto">R$ 7,00</p>
+                    </div>
+                    <div class="produto" onclick="incrementClick(this)">
+                        <img src="placeholder.jpg" alt="Produto 2">
+                        <div class="click-counter" style="display:none;">0</div>
+                        <p class="nome-produto">Produto 2</p>
+                        <p class="preco-produto">R$ 8,00</p>
+                    </div>
+                    <!-- Continue adding more products as needed -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="botoes">
+            <a href="../index.html">
+                <button class="cancelar-pedido">Cancelar pedido</button>
+            </a>
+            <a href="../pagamento/tela_pagamento.html">
+                <button class="finalizar-pedido">Finalizar pedido</button>
+            </a>
+        </div>
+        <p>&copy; 2024 Maria Bonita</p>
+    </footer>
+    <script src="script_compras.js"></script>
+</body>
+</html>

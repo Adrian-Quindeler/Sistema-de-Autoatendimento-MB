@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Pagamento</title>
+    <link rel="stylesheet" href="estilo_pagamento.css">
+</head>
+<body>
+    <div class="flex-container">
+        <header>
+            <!-- Conteúdo do cabeçalho -->
+        </header>
+        <main>
+            <div class="payment-container">
+                <div class="product-list">
+                    <div class="product-item">
+                        <img src="enroladinho.jpg" alt="Enroladinho">
+                        <span>Enroladinho</span>
+                        <span>R$ 7,00</span>
+                        <button class="remove-btn">-</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="coxinha.jpg" alt="Coxinha">
+                        <span>Coxinha</span>
+                        <span>R$ 6,00</span>
+                        <button class="remove-btn">-</button>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h2>Métodos de pagamento</h2>
+                    <p>Nosso sistema aceita as seguintes formas de pagamento:</p>
+                    <div class="payment-icons">
+                        <img src="pix.png" alt="Pix">
+                        <img src="visa.png" alt="Visa">
+                        <img src="mastercard.png" alt="MasterCard">
+                        <img src="dinheiro.png" alt="Dinheiro">
+                    </div>
+                </div>
+
+                <div class="total-payment">
+                    <span>TOTAL:</span>
+                    <span>R$ 13,00</span>
+                </div>
+
+                <div class="buttons">
+                    <button id="cancel-btn">Cancelar pedido</button>
+                    <button id="pay-btn" disabled>Pagar</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- Conteúdo do rodapé -->
+        </footer>
+    </div>
+
+    <script src="script_pagamento.js"></script>
+</body>
+</html>
