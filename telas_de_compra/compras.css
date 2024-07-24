@@ -60,17 +60,15 @@ h2 {
 }
 
 .produto {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    padding: 55px 35px;
-    margin-right: 10px;
-    flex: 0 0 15px;
+    padding: 10px 10px;
+    margin-right: 5px;
+    flex: 0 0 115px;
     text-align: center;
 }
 
 .produto img {
     max-width: 100%;
+    width: 100px;
     height: auto;
     margin-bottom: 10px;
 }
