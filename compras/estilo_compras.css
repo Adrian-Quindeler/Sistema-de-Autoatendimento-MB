@@ -1,5 +1,5 @@
 body, html {
-    overflow: auto;
+    overflow: hidden;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -90,11 +90,6 @@ footer {
     text-align: center;
     padding: 10px;
     color: black;
-    margin-bottom: 20px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 footer .botoes button {
