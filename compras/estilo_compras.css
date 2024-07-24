@@ -1,5 +1,5 @@
 body, html {
-    overflow: hidden;
+    overflow: auto;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -90,6 +90,11 @@ footer {
     text-align: center;
     padding: 10px;
     color: black;
+    margin-bottom: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 footer .botoes button {
@@ -105,7 +110,7 @@ footer .finalizar-pedido {
     background-color: #60ff60;
 }
 
-/* Add the styles for the click counter */
+
 .click-counter {
     position: absolute;
     top: 5px;
