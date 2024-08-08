@@ -36,6 +36,7 @@ header .title img {
 }
 
 main {
+    background-color: #fff;
     padding: 20px;
 }
 
@@ -44,62 +45,58 @@ h2 {
 }
 
 .categoria {
-    margin-bottom: 20px;
+    margin: 1px;
 }
 
 .categoria h3 {
     color: black;
-    padding: 10px;
-    margin: 0 -20px 10px;
+    padding: 5px;
+    margin: 0 -20px 0;
 }
 
 .produtos {
     display: flex;
     overflow-x: scroll;
-    padding: 10px 0;
+    padding: 0;
 }
 
 .produto {
-    background-color: #eee;
-    border: 1px solid #ccc;
     border-radius: 15px;
-    padding: 55px 35px;
+    padding: 10px 20px 10px 10px;
     margin-right: 10px;
-    flex: 0 0 15px;
     text-align: center;
     position: relative;
     display: inline-block;
 }
 
 .produto img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px;
+    width: 90px;
 }
 
 .produto .nome-produto {
     font-weight: bold;
-    margin: 10px 0 5px;
+    margin: 10px 0 0;
 }
 
 .produto .preco-produto {
     color: green;
+    margin: 5px;
 }
 
 footer {
+    border-radius: 25px 25px 0 0;
+    background-color: #c1c1c1;
     text-align: center;
     padding: 10px;
     color: black;
-    margin-bottom: 20px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 footer .botoes button {
     padding: 15px 30px;
-    font-size: 18px;
+    margin: 20px;
+    font-size: 20px;
 }
 
 footer .cancelar-pedido {
@@ -113,15 +110,15 @@ footer .finalizar-pedido {
 
 .click-counter {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 0;
+    left: 0;
     background-color: green;
     color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 14px;
 }

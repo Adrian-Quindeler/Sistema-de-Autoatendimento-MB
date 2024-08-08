@@ -57,6 +57,11 @@ main {
     width: 100%;
 }
 
+.content > img{
+    border-radius: 25px;
+    box-shadow: 4px 4px 10px;
+}
+
 form {
     position: fixed;
     top: 28%;
@@ -75,11 +80,6 @@ form {
     background-color: #fff;
 }
 
-.content img {
-    width: 100%;
-    height: auto;
-    z-index: 0;
-}
 
 footer {
     width: 100%;
@@ -87,4 +87,15 @@ footer {
     background-color: #fff;
     text-align: center;
     border-top: 1px solid #ddd;
+}
+
+button{
+    background-color: #FFE2E2;
+    border-radius: 100px;
+    height: 40px;
+    width: 250px;
+}
+button:hover{
+    background-color: #FFC3C3;
+    font-weight: 800;
 }
