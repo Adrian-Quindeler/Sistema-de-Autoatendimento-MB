@@ -61,18 +61,20 @@ h2 {
 }
 
 .produto {
-    border-radius: 15px;
     padding: 10px 20px 10px 10px;
+    display: inline-block;
+    border-radius: 15px;
     margin-right: 10px;
     text-align: center;
     position: relative;
-    display: inline-block;
+    width: 120px;
 }
 
 .produto img {
     border-radius: 10px;
     box-shadow: 2px 2px 6px;
     width: 90px;
+    height: 90px;
 }
 
 .produto .nome-produto {
@@ -86,8 +88,6 @@ h2 {
 }
 
 footer {
-    border-radius: 25px 25px 0 0;
-    background-color: #c1c1c1;
     text-align: center;
     padding: 10px;
     color: black;
@@ -101,10 +101,12 @@ footer .botoes button {
 
 footer .cancelar-pedido {
     background-color: #ff4545;
+    border-radius: 15px;
 }
 
 footer .finalizar-pedido {
     background-color: #60ff60;
+    border-radius: 15px;
 }
 
 

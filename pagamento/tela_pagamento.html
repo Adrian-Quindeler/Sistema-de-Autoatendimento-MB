@@ -7,54 +7,59 @@
     <link rel="stylesheet" href="estilo_pagamento.css">
 </head>
 <body>
-    <div class="flex-container">
-        <header>
-            <!-- Conteúdo do cabeçalho -->
-        </header>
-        <main>
-            <div class="payment-container">
-                <div class="product-list">
-                    <div class="product-item">
-                        <img src="enroladinho.jpg" alt="Enroladinho">
-                        <span>Enroladinho</span>
+    <main>
+        <div class="payment-container">
+            <div class="product-list">
+                <div class="product-item">
+                    <div>
+                        <img src="../imagens/assado.jpeg" alt="Assado">
+                        <span>Assado</span>
+                    </div>
+                    <div>
                         <span>R$ 7,00</span>
                         <button class="remove-btn">-</button>
                     </div>
-                    <div class="product-item">
-                        <img src="coxinha.jpg" alt="Coxinha">
+                </div>
+                <div class="product-item">
+                    <div>
+                        <img src="../imagens/assado.jpeg    " alt="Coxinha">
                         <span>Coxinha</span>
-                        <span>R$ 6,00</span>
+                    </div>
+                    <div>
+                        <span>R$ 7,00</span>
                         <button class="remove-btn">-</button>
                     </div>
-                </div>
 
-                <div class="payment-methods">
-                    <h2>Métodos de pagamento</h2>
-                    <p>Nosso sistema aceita as seguintes formas de pagamento:</p>
-                    <div class="payment-icons">
-                        <img src="pix.png" alt="Pix">
-                        <img src="visa.png" alt="Visa">
-                        <img src="mastercard.png" alt="MasterCard">
-                        <img src="dinheiro.png" alt="Dinheiro">
-                    </div>
                 </div>
-
-                <div class="total-payment">
-                    <span>TOTAL:</span>
-                    <span>R$ 13,00</span>
-                </div>
-
-                <div class="buttons">
-                    <button id="cancel-btn">Cancelar pedido</button>
-                    <button id="pay-btn" disabled>Pagar</button>
+                <hr>
+                <div class="total">
+                        <span>Total: </span>
+                        <span>R$ 14,00</span>
                 </div>
             </div>
-        </main>
-        <footer>
-            <!-- Conteúdo do rodapé -->
-        </footer>
-    </div>
 
+            <div class="payment-methods">
+                <h2>Métodos de pagamento</h2>
+                <p>Nosso sistema aceita as seguintes formas de pagamento:</p>
+                <div class="payment-icons">
+                    <img src="../imagens/pix.png" alt="Pix">
+                    <img src="../imagens/debito.jpeg" alt="Visa">
+                    <img src="../imagens/dinheiro.jpeg" alt="Dinheiro">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="botoes">
+            <a href="../tela_inicial/tela_inicial.html">
+                <button id="cancel-btn" class="cancelar-pedido">Cancelar pedido</button>
+            </a>
+            <a href="../pagamento/tela_pagamento.html">
+                <button id="pay-btn" class="finalizar-pedido">Finalizar pedido</button>
+            </a>
+        </div>
+        <p>&copy; 2024 Maria Bonita</p>
+    </footer>
     <script src="script_pagamento.js"></script>
 </body>
 </html>
