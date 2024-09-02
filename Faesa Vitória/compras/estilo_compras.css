@@ -1,0 +1,121 @@
+body, html {
+    overflow: auto;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8d7da;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+header .title {
+    flex: 1;
+    text-align: center;
+}
+
+header .title img {
+    height: 150px;
+    margin-left: 10px;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.categoria {
+    margin: 1px;
+}
+
+.categoria h3 {
+    color: black;
+    padding: 5px;
+    margin: 0 -20px 0;
+}
+
+.produtos {
+    display: flex;
+    overflow-x: scroll;
+    padding: 0;
+}
+
+.produto {
+    padding: 10px 20px 10px 10px;
+    display: inline-block;
+    border-radius: 15px;
+    margin-right: 10px;
+    text-align: center;
+    position: relative;
+    width: 120px;
+}
+
+.produto img {
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px;
+    width: 90px;
+    height: 90px;
+}
+
+.produto .nome-produto {
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+.produto .preco-produto {
+    color: green;
+    margin: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
+
+footer .botoes button {
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 20px;
+}
+
+footer .cancelar-pedido {
+    background-color: #ff4545;
+    border-radius: 15px;
+}
+
+footer .finalizar-pedido {
+    background-color: #60ff60;
+    border-radius: 15px;
+}
+
+
+.click-counter {
+    position: absolute;
+    top: 0;
+    right: 15%;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}

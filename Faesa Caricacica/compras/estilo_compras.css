@@ -25,13 +25,8 @@ header .title {
     text-align: center;
 }
 
-header .title h1 {
-    margin: 0;
-    color: black;
-}
-
 header .title img {
-    height: 60px;
+    height: 150px;
     margin-left: 10px;
 }
 
@@ -113,7 +108,7 @@ footer .finalizar-pedido {
 .click-counter {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 15%;
     background-color: green;
     color: white;
     border-radius: 50%;

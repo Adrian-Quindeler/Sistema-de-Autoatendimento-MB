@@ -1,0 +1,122 @@
+html, body {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+main {
+    width: 95%;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.payment-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-list {
+    flex: 1;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.product-item > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-item > div > *{
+    margin: 10px;
+}
+
+.product-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total *{
+    margin: 0 10px;
+}
+
+.remove-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #ff1a1a;
+}
+
+.payment-methods {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-methods h2 {
+    margin-bottom: 10px;
+}
+
+.payment-icons img {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
+
+footer .botoes button {
+    padding: 15px 30px;
+    margin: 10px 20px;
+    font-size: 20px;
+}
+
+#cancel-btn {
+    background-color: #ff4d4d;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#pay-btn {
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: not-allowed;
+}
+
+#pay-btn.enabled {
+    background-color: #60ff60;
+    cursor: pointer;
+}
+
+footer p{
+    margin: 20px 0 0 0;
+}

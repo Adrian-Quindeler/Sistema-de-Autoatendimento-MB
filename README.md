@@ -1,2 +1,4 @@
-# Projeto-Integrador-FAESA
-Para o Projeto integrador da FAESA, nosso grupo tem como objetivo criar um sistema de autoatendimento e gerenciamento de estoque para a vendedora de lanches local, cuja loja atende pelo nome de "Maria Bonita"
+# Autoatendimento Maria Bonita
+
+<a href="Faesa Caricacica/tela_inicial/tela_inicial.html">Faesa de Caricacica</a>
+<a href="Faesa Vitória/tela_inicial/tela_inicial.html">Faesa de Vitória</a>
