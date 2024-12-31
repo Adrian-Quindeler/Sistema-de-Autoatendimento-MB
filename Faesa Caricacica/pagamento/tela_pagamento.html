@@ -10,34 +10,13 @@
     <main>
         <div class="payment-container">
             <div class="product-list">
-                <div class="product-item">
-                    <div>
-                        <img src="../../imagens/Comidas/Burguer.jpeg" alt="Hamburguer assado">
-                        <span>Assado</span>
-                    </div>
-                    <div>
-                        <span>R$ 7,00</span>
-                        <button class="remove-btn">-</button>
-                    </div>
-                </div>
-                <div class="product-item">
-                    <div>
-                        <img src="../../imagens/Bebidas/Refri600.jpg" alt="Refrigerante 600ml">
-                        <span>Refrigerante 600ml</span>
-                    </div>
-                    <div>
-                        <span>R$ 7,00</span>
-                        <button class="remove-btn">-</button>
-                    </div>
-
-                </div>
-                <hr>
-                <div class="total">
-                        <span>Total: </span>
-                        <span>R$ 14,00</span>
+                <div class="header">
+                    <span>&ThickSpace;Produto</span>
+                    <span>Quantidade</span>
+                    <span>Valor</span>
+                    <span>Subtotal</span>
                 </div>
             </div>
-
             <div class="payment-methods">
                 <h2>Métodos de pagamento</h2>
                 <p>Nosso sistema aceita as seguintes formas de pagamento:</p>
@@ -51,8 +30,8 @@
     </main>
     <footer>
         <div class="botoes">
-            <a href="../tela_inicial/tela_inicial.html">
-                <button id="cancel-btn" class="cancelar-pedido">Cancelar pedido</button>
+            <a href="../tela_inicial/tela_inicial.html" onclick="sessionStorage.clear()">
+                <button id="cancel-btn"class="cancelar-pedido">Cancelar pedido</button>
             </a>
             <a href="../pagamento/tela_pagamento.html">
                 <button id="pay-btn" class="finalizar-pedido">Finalizar pedido</button>

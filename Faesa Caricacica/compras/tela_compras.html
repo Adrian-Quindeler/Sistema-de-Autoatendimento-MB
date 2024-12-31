@@ -16,6 +16,7 @@
         </div>
     </header>
     <main>
+        <p id="debug"></p>
         <section>
             <h2>Confira nossos Produtos</h2>
             <div class="categoria">
@@ -37,7 +38,7 @@
     </main>
     <footer>
         <div class="botoes">
-            <a href="../tela_inicial/tela_inicial.html">
+            <a href="../tela_inicial/tela_inicial.html" onclick="sessionStorage.clear()">
                 <button class="cancelar-pedido">Cancelar pedido</button>
             </a>
             <a href="../pagamento/tela_pagamento.html">
@@ -46,7 +47,6 @@
         </div>
         <p>&copy; 2024 Maria Bonita</p>
     </footer>
-    <script src="script_compras.js"></script>
-    <script src="renderizar_produtos.js"></script>
+    <script src="tratar_produtos.js"></script>
 </body>
 </html>
