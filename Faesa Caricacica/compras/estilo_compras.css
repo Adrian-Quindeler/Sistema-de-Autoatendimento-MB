@@ -87,6 +87,22 @@ h2 {
     font-weight: bold;
 }
 
+div.indicador{
+    background-image: linear-gradient(90deg, transparent, #FFF);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 20px;
+    transform: translate(0, -180px);
+    text-align: center;
+}
+
+.indicador i{
+    font-size: 25px;
+    color: #c5c5c5;
+    margin: 35px 0 0 90px;
+}
+
 footer {
     text-align: center;
     padding: 10px;

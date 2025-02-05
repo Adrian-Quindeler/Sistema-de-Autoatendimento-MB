@@ -49,3 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
         payBtn.classList.add('enabled');
     }
 });
+
+function enviarAoBanco(){
+    const cart = sessionStorage.getItem('cart');
+    document.getElementById("cart_input").value = cart;
+}
