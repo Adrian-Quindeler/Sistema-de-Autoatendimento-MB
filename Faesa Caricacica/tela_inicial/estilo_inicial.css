@@ -24,11 +24,23 @@ header {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    gap: 12px;
 }
 
 header img {
     width: 150px;
     margin: 30px auto -5px auto;
+}
+
+.header-text {
+    font-size: 24px;
+    font-family: Zilla Slab;
+}
+
+.header-back {
+    text-decoration: underline;
+    font-family: Zilla Slab;
+    font-size: 16px;
 }
 
 main {
@@ -88,15 +100,14 @@ footer {
     background-color: #fff;
     background-color: #eeeeee;
     border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 button{
     background-color: #FFE2E2;
     border-radius: 100px;
     height: 40px;
-    width: 250px;
-}
-button:hover{
-    background-color: #FFC3C3;
-    font-weight: 800;
+    width: 40%;
 }
