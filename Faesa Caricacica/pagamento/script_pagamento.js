@@ -54,3 +54,52 @@ function enviarAoBanco(){
     const cart = sessionStorage.getItem('cart');
     document.getElementById("cart_input").value = cart;
 }
+
+function EnviarAoBaco() {
+    event.preventDefault(); // Evita envio automático do formulário
+
+    // Simula envio de pagamento (substitua por lógica real se necessário)
+    setTimeout(() => {
+        mostrarPopupAvaliacao();
+    }, 500); // Espera meio segundo
+}
+
+function mostrarPopupAvaliacao() {
+    const popup = document.getElementById("avaliacao-popup");
+    popup.classList.remove("hidden");
+
+    const starsContainer = document.getElementById("stars-container");
+    starsContainer.innerHTML = "";
+
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement("span");
+        star.innerHTML = "&#9733;"; // Estrela unicode
+        star.classList.add("star");
+        star.dataset.value = i;
+
+        star.addEventListener("click", () => {
+            selecionarEstrelas(i);
+        });
+
+        starsContainer.appendChild(star);
+    }
+
+    document.getElementById("enviar-avaliacao").addEventListener("click", () => {
+        const estrelasSelecionadas = document.querySelectorAll(".star.selected").length;
+        alert(`Obrigado pela sua avaliação de ${estrelasSelecionadas} estrela(s)!`);
+        document.getElementById("avaliacao-popup").classList.add("hidden");
+
+        // Aqui você pode enviar as estrelas para o backend se quiser.
+    });
+}
+
+function selecionarEstrelas(n) {
+    const estrelas = document.querySelectorAll(".star");
+    estrelas.forEach((star, i) => {
+        if (i < n) {
+            star.classList.add("selected");
+        } else {
+            star.classList.remove("selected");
+        }
+    });
+}
