@@ -1,30 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     const productList = document.querySelector('.product-list');
+    const payBtn = document.getElementById('pay-btn');
 
-    // Recupera o carrinho do SessionStorage
     const cart = JSON.parse(sessionStorage.getItem('cart')) || {};
-
-    // Inicializa o total
     let total = 0;
 
-    // Verifica se o carrinho está vazio
     if (Object.keys(cart).length === 0) {
         productList.innerHTML = "<p>Nenhum item no carrinho.</p>";
-        return; // Sai se não houver itens no carrinho
+        payBtn.setAttribute('disabled', 'true');
+        return;
     }
 
-    // Itera sobre os itens do carrinho
     for (const [productName, details] of Object.entries(cart)) {
         const item = document.createElement('div');
         item.className = 'product-item';
 
-        // Converte o preço para número para cálculos
         const price = parseFloat(details.price);
         const quantity = details.quantity;
         const subtotal = price * quantity;
         total += subtotal;
 
-        // Adiciona o HTML do item
         item.innerHTML = `
             <span class="product-name">${productName}</span>
             <span class="product-quantity">${quantity}</span>
@@ -34,36 +29,45 @@ document.addEventListener('DOMContentLoaded', () => {
         productList.appendChild(item);
     }
 
-    // Cria e exibe o total
     const totalDiv = document.createElement('div');
     totalDiv.className = 'total';
     totalDiv.innerHTML = `<strong>Total: R$ ${total.toFixed(2)}</strong>`;
     productList.appendChild(totalDiv);
 
-    // Gerencia o botão de pagamento
-    const payBtn = document.getElementById('pay-btn');
     if (total === 0) {
         payBtn.setAttribute('disabled', 'true');
     } else {
         payBtn.removeAttribute('disabled');
         payBtn.classList.add('enabled');
     }
+
+    // Clique no botão de pagamento
+    payBtn.addEventListener('click', async (event) => {
+        event.preventDefault();
+
+        try {
+            const response = await fetch('/api/pagamento/criar-preferencia', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ cart })
+            });
+
+            const data = await response.json();
+
+            if (data.init_point) {
+                // Redireciona para o checkout do Mercado Pago
+                window.location.href = data.init_point;
+            } else {
+                alert('Erro ao iniciar pagamento.');
+            }
+        } catch (error) {
+            console.error('Erro ao criar preferência:', error);
+            alert('Erro no processamento do pagamento.');
+        }
+    });
 });
 
-function enviarAoBanco(){
-    const cart = sessionStorage.getItem('cart');
-    document.getElementById("cart_input").value = cart;
-}
-
-function EnviarAoBanco() {
-    event.preventDefault(); // Evita envio automático do formulário
-
-    // Simula envio de pagamento (substitua por lógica real se necessário)
-    setTimeout(() => {
-        mostrarPopupAvaliacao();
-    }, 500); // Espera meio segundo
-}
-
+// Popup de avaliação (mantido)
 function mostrarPopupAvaliacao() {
     const popup = document.getElementById("avaliacao-popup");
     popup.classList.remove("hidden");
@@ -73,7 +77,7 @@ function mostrarPopupAvaliacao() {
 
     for (let i = 1; i <= 5; i++) {
         const star = document.createElement("span");
-        star.innerHTML = "&#9733;"; // Estrela unicode
+        star.innerHTML = "&#9733;";
         star.classList.add("star");
         star.dataset.value = i;
 
@@ -87,9 +91,9 @@ function mostrarPopupAvaliacao() {
     document.getElementById("enviar-avaliacao").addEventListener("click", () => {
         const estrelasSelecionadas = document.querySelectorAll(".star.selected").length;
         alert(`Obrigado pela sua avaliação de ${estrelasSelecionadas} estrela(s)!`);
-        document.getElementById("avaliacao-popup").classList.add("hidden");
+        popup.classList.add("hidden");
 
-        // Aqui você pode enviar as estrelas para o backend se quiser.
+        // Aqui você pode enviar a nota ao backend, se quiser
     });
 }
 

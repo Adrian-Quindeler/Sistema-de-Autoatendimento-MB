@@ -1,6 +1,9 @@
 import express, { Express, Request, Response } from 'express';
-import uploadRouter from './routes/upload';
+import pagamentoRouter from './routes/pagamento'; 
+import { MercadoPagoConfig } from 'mercadopago';
 import produtosRouter from './routes/produtos';
+import uploadRouter from './routes/upload';
+import bodyParser from 'body-parser';
 import path from 'path';
 import cors from 'cors';
 
@@ -14,9 +17,16 @@ app.use(express.static(path.join(__dirname, '../public')));
 // Usa a rota de upload
 app.use('/upload', uploadRouter);
 app.use('/api', produtosRouter);
+app.use(bodyParser.json());
+app.use('/api/pagamento', pagamentoRouter);
 
 app.get('/', (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, '../public/html/login.html'));
+});
+
+
+const mercadopago = new MercadoPagoConfig({
+  accessToken: 'SEU_ACCESS_TOKEN_PRIVADO',
 });
 
 app.get('/index.html', (req: Request, res: Response) => {
