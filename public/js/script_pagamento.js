@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let total = 0;
 
     if (Object.keys(cart).length === 0) {
-        productList.innerHTML = "<p>Nenhum item no carrinho.</p>";
+        productList.innerHTML = "<p style='color: gray'>Nenhum item no carrinho.</p>";
         payBtn.setAttribute('disabled', 'true');
         return;
     }
