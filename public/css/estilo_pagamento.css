@@ -14,7 +14,6 @@ main {
     margin: 20px;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
-    
     padding: 10px 30px;
     border-radius: 12px;
 }
@@ -50,7 +49,6 @@ main {
     display: flex;
     flex-direction: column;
     height: 100%;
-    
     padding: 15px;
     margin: auto;
     margin-top: 3%;
@@ -105,7 +103,6 @@ main .botoes button {
 #cancel-btn {
     background-color: #ff4d4d;
     cursor: pointer;
-
     border: none;
     border-radius: 25px;
     color: white;
@@ -114,8 +111,8 @@ main .botoes button {
 
 #pay-btn {
     background-color: #ccc;
+    color: #1010104D;
     cursor: not-allowed;
-
     border: none;
     border-radius: 25px;
 }
@@ -123,7 +120,6 @@ main .botoes button {
 #pay-btn.enabled {
     background-color: #60ff60;
     cursor: pointer;
-
     border: none;
     border-radius: 25px;
 }
