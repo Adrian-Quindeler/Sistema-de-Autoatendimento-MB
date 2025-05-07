@@ -1,47 +1,48 @@
-import { Router, Request, Response } from 'express';
-import { MercadoPagoConfig, Preference } from 'mercadopago';
+import { Router } from 'express';
+import MercadoPagoConfig, { Preference } from 'mercadopago';
+import dotenv from 'dotenv';
 
-const pagamentoRouter: Router = Router();
+dotenv.config();
 
-const client = new MercadoPagoConfig({
-    accessToken: process.env.MERCADO_PAGO_ACCESS_TOKEN || 'SUA_CHAVE_AQUI',
+const pagamentoRouter = Router();
+
+// Instancia configurada com o token
+const mercadopago = new MercadoPagoConfig({
+  accessToken: process.env.MERCADO_PAGO_ACCESS_TOKEN || '',
 });
 
-const preference = new Preference(client);
+// Instancia o cliente de preferências
+const preferenceClient = new Preference(mercadopago);
 
-pagamentoRouter.post('/criar-preferencia', async (req: Request, res: Response): Promise<void> => {
+pagamentoRouter.post('/criar-preferencia', async (req, res) => {
+  try {
     const cart = req.body.cart;
 
-    if (!cart) {
-        res.status(400).json({ error: 'Carrinho vazio.' });
-        return;
-    }
+    const items = Object.entries(cart).map(([productName, details]: any) => ({
+        id: productName,
+        title: productName,
+        quantity: Number(details.quantity),
+        currency_id: 'BRL',
+        unit_price: parseFloat(details.price),
+      }));
 
-    try {
-        const items = Object.entries(cart).map(([name, { price, quantity }]: any) => ({
-            id: name,
-            title: name,
-            unit_price: parseFloat(price),
-            quantity,
-        }));
+    const preference = await preferenceClient.create({
+      body: {
+        items,
+        back_urls: {
+          success: 'http://localhost:3000/sucesso.html',
+          failure: 'http://localhost:3000/erro.html',
+          pending: 'http://localhost:3000/pendente.html',
+        },
+        auto_return: 'approved',
+      },
+    });
 
-        const result = await preference.create({
-            body: {
-                items,
-                back_urls: {
-                    success: 'http://localhost:3000/html/tela_pagamento.html?status=success',
-                    failure: 'http://localhost:3000/html/tela_pagamento.html?status=failure',
-                    pending: 'http://localhost:3000/html/tela_pagamento.html?status=pending',
-                },
-                auto_return: 'approved',
-            },
-        });
-
-        res.json({ init_point: result.init_point });
-    } catch (error) {
-        console.error('Erro ao criar preferência:', error);
-        res.status(500).json({ error: 'Erro ao processar pagamento.' });
-    }
+    res.json({ id: preference.id });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro ao criar preferência');
+  }
 });
 
 export default pagamentoRouter;
