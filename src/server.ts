@@ -5,9 +5,12 @@ import uploadRouter from '../src/routes/upload';
 import produtosRouter from '../src/routes/produtos';
 import path from 'path';
 import cors from 'cors';
+const http = require('http');
+import * as ngrok from '@ngrok/ngrok';
 
 const app: Express = express();
 
+// Configuração do Express
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(process.cwd(), 'public')));
@@ -46,5 +49,28 @@ app.get('/gerenciamento_produtos', (req: Request, res: Response) => {
     res.sendFile(path.join(process.cwd(), 'public/html/gerenciamento_produtos.html'));
 });
 
-// Exporta como função Serverless para Vercel
-module.exports = serverless(app);
+app.get('/pagamento/sucesso', (req: Request, res: Response) => {
+    res.sendFile(path.join(process.cwd(), 'public/html/pagamento/sucesso.html'));
+});
+
+app.get('/pagamento/erro', (req: Request, res: Response) => {
+    res.sendFile(path.join(process.cwd(), 'public/html/pagamento/erro.html'));
+});
+
+app.get('/pagamento/pendente', (req: Request, res: Response) => {
+    res.sendFile(path.join(process.cwd(), 'public/html/pagamento/pendente.html'));
+});
+
+// Inicia o servidor e o ngrok
+const PORT = 3000;
+app.listen(PORT, async () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+
+    try {
+        await ngrok.authtoken('2wrvSWj7yPsZxu0VZH7SeR5CeS0_6eWbScVfzXmAVvF12ZcNa');
+        const listener = await ngrok.connect({ addr: 3000 });
+        console.log(`Ngrok está disponível em: ${listener.url()}`);
+    } catch (error) {
+        console.error('Erro ao conectar com ngrok:', error);
+    }
+});
