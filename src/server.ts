@@ -1,12 +1,10 @@
 import express, { Express, Request, Response } from 'express';
-import serverless from 'serverless-http';
+import produtosRouter from '../src/routes/produtos';
+import dashboardRouter from './routes/dashboard';
 import pagamentoRoute from './routes/pagamento'; 
 import uploadRouter from '../src/routes/upload';
-import produtosRouter from '../src/routes/produtos';
 import path from 'path';
 import cors from 'cors';
-const http = require('http');
-import * as ngrok from '@ngrok/ngrok';
 
 const app: Express = express();
 
@@ -17,11 +15,16 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 // Rotas API
 app.use('/pagamento', pagamentoRoute);
+app.use('/dashboard', dashboardRouter);
 app.use('/upload', uploadRouter);
 app.use('/api', produtosRouter);
 
 // Rotas HTML
 app.get('/', (req: Request, res: Response) => {
+    res.sendFile(path.join(process.cwd(), 'public/html/login.html'));
+});
+
+app.get('/login', (req: Request, res: Response) => {
     res.sendFile(path.join(process.cwd(), 'public/html/login.html'));
 });
 
@@ -61,16 +64,7 @@ app.get('/pagamento/pendente', (req: Request, res: Response) => {
     res.sendFile(path.join(process.cwd(), 'public/html/pagamento/pendente.html'));
 });
 
-// Inicia o servidor e o ngrok
-const PORT = 3000;
-app.listen(PORT, async () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
 
-    try {
-        await ngrok.authtoken('2wrvSWj7yPsZxu0VZH7SeR5CeS0_6eWbScVfzXmAVvF12ZcNa');
-        const listener = await ngrok.connect({ addr: 3000 });
-        console.log(`Ngrok está disponível em: ${listener.url()}`);
-    } catch (error) {
-        console.error('Erro ao conectar com ngrok:', error);
-    }
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
 });
