@@ -61,7 +61,7 @@ async function processarPagamento(cart) {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/pagamento/criar-preferencia', {
+        const response = await fetch('/pagamento/criar-preferencia', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
