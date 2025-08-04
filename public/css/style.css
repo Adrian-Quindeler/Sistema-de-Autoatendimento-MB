@@ -255,6 +255,7 @@ button {
 /* KPI Section */
 .kpi-section {
 	display: flex;
+	gap: 24px;
 	justify-content: center;
 }
 

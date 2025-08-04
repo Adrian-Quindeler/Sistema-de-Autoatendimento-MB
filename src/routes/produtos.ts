@@ -5,7 +5,6 @@ import fs from "fs";
 
 const produtosRouter = Router();
 
-
 // GET
 produtosRouter.get("/produtos", (async (req: Request, res: Response) => {
 	try{

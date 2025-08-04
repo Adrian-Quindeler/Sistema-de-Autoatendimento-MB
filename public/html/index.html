@@ -39,14 +39,14 @@
                     </svg>
                     <span>Dashboard</span>
                 </a>
-                <a href="cadastro_produtos" class="sidebar__link">
+                <a href="gerenciamento_produtos" class="sidebar__link">
                     <svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <path d="M16 10a4 4 0 0 1-8 0"></path>
                     </svg>
-                    <span>Cadastrar Produto</span>
+                    <span>Gerenciar Produtos</span>
                 </a>
                 <a href="tela_inicial" class="sidebar__link">
                     <svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -56,6 +56,15 @@
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                     </svg>
                     <span>Vendas</span>
+                </a>
+                <a href="tela_pedidos" class="sidebar__link">
+                    <svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Pedidos</span>
                 </a>
             </nav>
 
@@ -110,9 +119,23 @@
                                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                             </svg>
                         </div>
-                        <div class="kpi-card__content">
-                            <h3 class="kpi-card__title">Total de Vendas</h3>
-                            <p class="kpi-card__value">R$ 12.450,00</p>
+                        <div class="kpi-card__content" id="kpi-card-content-sales">
+                            <h3 class="kpi-card__title" id="kpi-card-title-sales">Número Total de Vendas</h3>
+                            <p class="kpi-card__value" id="kpi-card-value-sales">R$ </p>
+                        </div>
+                    </div>
+
+                    <div class="kpi-card">
+                        <div class="kpi-card__icon kpi-card__icon--sales">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <div class="kpi-card__content" id="kpi-card-content-revenue">
+                            <h3 class="kpi-card__title" id="kpi-card-title-revenue">Rendimento Liquido total</h3>
+                            <p class="kpi-card__value" id="kpi-card-value-revenue">R$ </p>
                         </div>
                     </div>
                 </section>
@@ -331,6 +354,8 @@
             </div>
         </main>
     </div>
+
+    <script src="/js/index.js"></script>
 
     <script>
         // Menu mobile

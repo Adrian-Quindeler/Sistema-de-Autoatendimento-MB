@@ -1,10 +1,11 @@
-import express from 'express';
-import cors from 'cors';
-import path from 'path';
-import dotenv from 'dotenv';
-import usersRoutes from './routes/users';
-import uploadRoutes from './routes/upload';
-import apiRoutes from './routes/produtos';
+import cors            from 'cors';
+import path            from 'path';
+import dotenv          from 'dotenv';
+import express         from 'express';
+import usersRoutes     from './routes/users';
+import uploadRoutes    from './routes/upload';
+import pedidosRouter   from './routes/pedidos';
+import produtosRoutes  from './routes/produtos';
 import pagamentoRouter from './routes/pagamento';
 
 dotenv.config();
@@ -15,9 +16,10 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use('/api', apiRoutes);
+app.use('/api', produtosRoutes);
 app.use('/user', usersRoutes);
 app.use('/upload', uploadRoutes);
+app.use('/pedidos', pedidosRouter)
 app.use('/pagamento', pagamentoRouter);
 app.use(express.static(path.join(process.cwd(), 'public')));
 
@@ -40,6 +42,10 @@ app.get('/tela_compras', (req, res) => {
 
 app.get('/tela_pagamento', (req, res) => {
     res.sendFile(path.join(process.cwd(), 'public/html/tela_pagamento.html'));
+});
+
+app.get('/tela_pedidos', (req, res) => {
+    res.sendFile(path.join(process.cwd(), 'public/html/tela_pedidos.html'));
 });
 
 app.get('/cadastro_produtos', (req, res) => {
